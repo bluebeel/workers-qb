@@ -1,6 +1,6 @@
 {
   "name": "@bluebeela/workers-qb",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Zero dependencies Query Builder for Cloudflare D1 Workers & Workers Analytic Engine",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -19,7 +19,7 @@
     "package": "npm run build && npm pack",
     "test": "jest --no-cache --runInBand",
     "test:cov": "jest --coverage --no-cache --runInBand",
-    "addscope": "node tools/packagejson name @g4brym/workers-qb"
+    "addscope": "node tools/packagejson name @bluebeela/workers-qb"
   },
   "publishConfig": {
     "access": "public"
