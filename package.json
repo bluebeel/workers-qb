@@ -1,6 +1,6 @@
 {
   "name": "@bluebeela/workers-qb",
-  "version": "0.2.0",
+  "version": "0.2.2",
   "description": "Zero dependencies Query Builder for Cloudflare D1 Workers & Workers Analytic Engine",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
