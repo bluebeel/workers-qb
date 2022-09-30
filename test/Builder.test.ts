@@ -1,13 +1,13 @@
-import {QuerybuilderTest} from "./utils";
+import {DatabaseQueryBuilderTest} from "./utils";
 import {OrderTypes} from "../src/enums";
 
 
-describe('QueryBuilder', () => {
+describe('DatabaseQueryBuilder', () => {
     //////
     // Insert
     //////
     test('insert one field without returning', async () => {
-        const query = new QuerybuilderTest()._insert({
+        const query = new DatabaseQueryBuilderTest()._insert({
           tableName: "testTable",
           data: {
             my_field: "test"
@@ -18,7 +18,7 @@ describe('QueryBuilder', () => {
     })
 
     test('insert multiple fields without returning', async () => {
-        const query = new QuerybuilderTest()._insert({
+        const query = new DatabaseQueryBuilderTest()._insert({
           tableName: "testTable",
           data: {
             my_field: "test",
@@ -30,7 +30,7 @@ describe('QueryBuilder', () => {
     })
 
     test('insert multiple fields with one returning', async () => {
-        const query = new QuerybuilderTest()._insert({
+        const query = new DatabaseQueryBuilderTest()._insert({
           tableName: "testTable",
           data: {
             my_field: "test",
@@ -43,7 +43,7 @@ describe('QueryBuilder', () => {
     })
 
     test('insert multiple fields with multiple returning', async () => {
-        const query = new QuerybuilderTest()._insert({
+        const query = new DatabaseQueryBuilderTest()._insert({
           tableName: "testTable",
           data: {
             my_field: "test",
@@ -59,7 +59,7 @@ describe('QueryBuilder', () => {
     // Update
     //////
     test('update one field with one where without returning', async () => {
-        const query = new QuerybuilderTest()._update({
+        const query = new DatabaseQueryBuilderTest()._update({
           tableName: "testTable",
           data: {
             my_field: "test"
@@ -75,7 +75,7 @@ describe('QueryBuilder', () => {
     })
 
     test('update multiple field with one where without returning', async () => {
-        const query = new QuerybuilderTest()._update({
+        const query = new DatabaseQueryBuilderTest()._update({
           tableName: "testTable",
           data: {
             my_field: "test",
@@ -92,7 +92,7 @@ describe('QueryBuilder', () => {
     })
 
     test('update multiple field with multiple where without returning', async () => {
-        const query = new QuerybuilderTest()._update({
+        const query = new DatabaseQueryBuilderTest()._update({
           tableName: "testTable",
           data: {
             my_field: "test",
@@ -112,7 +112,7 @@ describe('QueryBuilder', () => {
     })
 
     test('update multiple field with multiple where with one returning', async () => {
-        const query = new QuerybuilderTest()._update({
+        const query = new DatabaseQueryBuilderTest()._update({
           tableName: "testTable",
           data: {
             my_field: "test",
@@ -133,7 +133,7 @@ describe('QueryBuilder', () => {
     })
 
     test('update multiple field with multiple where with multiple returning', async () => {
-        const query = new QuerybuilderTest()._update({
+        const query = new DatabaseQueryBuilderTest()._update({
           tableName: "testTable",
           data: {
             my_field: "test",
@@ -157,7 +157,7 @@ describe('QueryBuilder', () => {
     // Delete
     //////
     test('delete with one where without returning', async () => {
-        const query = new QuerybuilderTest()._delete({
+        const query = new DatabaseQueryBuilderTest()._delete({
           tableName: "testTable",
           where: {
             conditions: "field = ?1",
@@ -169,7 +169,7 @@ describe('QueryBuilder', () => {
     })
 
     test('delete with multiple where without returning', async () => {
-        const query = new QuerybuilderTest()._delete({
+        const query = new DatabaseQueryBuilderTest()._delete({
           tableName: "testTable",
           where: {
             conditions: [
@@ -184,7 +184,7 @@ describe('QueryBuilder', () => {
     })
 
     test('delete with multiple where with one returning', async () => {
-        const query = new QuerybuilderTest()._delete({
+        const query = new DatabaseQueryBuilderTest()._delete({
           tableName: "testTable",
           where: {
             conditions: [
@@ -201,7 +201,7 @@ describe('QueryBuilder', () => {
     })
 
     test('delete with multiple where with multiple returning', async () => {
-        const query = new QuerybuilderTest()._delete({
+        const query = new DatabaseQueryBuilderTest()._delete({
           tableName: "testTable",
           where: {
             conditions: [
@@ -221,7 +221,7 @@ describe('QueryBuilder', () => {
     // Select
     //////
     test('select simple', async () => {
-        const query = new QuerybuilderTest()._select({
+        const query = new DatabaseQueryBuilderTest()._select({
           tableName: "testTable",
           fields: "*",
         })
@@ -230,7 +230,7 @@ describe('QueryBuilder', () => {
     })
 
     test('select with one where', async () => {
-        const query = new QuerybuilderTest()._select({
+        const query = new DatabaseQueryBuilderTest()._select({
           tableName: "testTable",
           fields: "*",
           where: {
@@ -243,7 +243,7 @@ describe('QueryBuilder', () => {
     })
 
     test('select with one where no parameters', async () => {
-        const query = new QuerybuilderTest()._select({
+        const query = new DatabaseQueryBuilderTest()._select({
           tableName: "testTable",
           fields: "*",
           where: {
@@ -255,7 +255,7 @@ describe('QueryBuilder', () => {
     })
 
     test('select with multiple where', async () => {
-        const query = new QuerybuilderTest()._select({
+        const query = new DatabaseQueryBuilderTest()._select({
           tableName: "testTable",
           fields: "*",
           where: {
@@ -271,7 +271,7 @@ describe('QueryBuilder', () => {
     })
 
     test('select with multiple where and one group by', async () => {
-        const query = new QuerybuilderTest()._select({
+        const query = new DatabaseQueryBuilderTest()._select({
           tableName: "testTable",
           fields: "*",
           where: {
@@ -289,7 +289,7 @@ describe('QueryBuilder', () => {
     })
 
     test('select with multiple where and multiple group by', async () => {
-        const query = new QuerybuilderTest()._select({
+        const query = new DatabaseQueryBuilderTest()._select({
           tableName: "testTable",
           fields: "*",
           where: {
@@ -310,7 +310,7 @@ describe('QueryBuilder', () => {
     })
 
     test('select with multiple where and one group by and having', async () => {
-        const query = new QuerybuilderTest()._select({
+        const query = new DatabaseQueryBuilderTest()._select({
           tableName: "testTable",
           fields: "*",
           where: {
@@ -329,7 +329,7 @@ describe('QueryBuilder', () => {
     })
 
     test('select with multiple where and one group by and one order by', async () => {
-        const query = new QuerybuilderTest()._select({
+        const query = new DatabaseQueryBuilderTest()._select({
           tableName: "testTable",
           fields: "*",
           where: {
@@ -348,7 +348,7 @@ describe('QueryBuilder', () => {
     })
 
     test('select with multiple where and one group by and multiple order by', async () => {
-        const query = new QuerybuilderTest()._select({
+        const query = new DatabaseQueryBuilderTest()._select({
           tableName: "testTable",
           fields: "*",
           where: {
@@ -367,7 +367,7 @@ describe('QueryBuilder', () => {
     })
 
     test('select with multiple where and one group by and object order by', async () => {
-        const query = new QuerybuilderTest()._select({
+        const query = new DatabaseQueryBuilderTest()._select({
           tableName: "testTable",
           fields: "*",
           where: {
@@ -390,7 +390,7 @@ describe('QueryBuilder', () => {
 
 
     test('select with multiple where and one group by and limit and offset', async () => {
-        const query = new QuerybuilderTest()._select({
+        const query = new DatabaseQueryBuilderTest()._select({
           tableName: "testTable",
           fields: "*",
           where: {

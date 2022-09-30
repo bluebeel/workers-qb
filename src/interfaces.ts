@@ -56,3 +56,15 @@ export interface ResultOne{
     served_by: string
     success: boolean
 }
+
+export interface AnalyticResult{
+  meta: Array<Record<string, string | boolean | number | null>>
+  data: Array<Record<string, string | boolean | number | null>>
+  rows: number
+}
+
+export interface AnalyticResultOne{
+  meta: Array<Record<string, string | boolean | number | null>>
+  data: Record<string, string | boolean | number | null>
+  rows: number
+}

@@ -1,7 +1,7 @@
-import {QueryBuilder} from "./Builder";
+import {DatabaseQueryBuilder} from "./DatabaseBuilder";
 import {FetchTypes} from "./enums";
 
-export class D1QB extends QueryBuilder {
+export class D1QB extends DatabaseQueryBuilder {
   private db: any;
   constructor(db: any) {
     super();

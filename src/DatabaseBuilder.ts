@@ -1,7 +1,7 @@
 import {Delete, Insert, Result, ResultOne, SelectAll, SelectOne, Update} from "./interfaces";
 import {FetchTypes, OrderTypes} from "./enums";
 
-export class QueryBuilder {
+export class DatabaseQueryBuilder {
   async execute(params: {query: String, arguments?: (string | number | boolean | null)[], fetchType?: FetchTypes}): Promise<any> {
     throw new Error("Execute method not implemented");
   }
